@@ -1,0 +1,1 @@
+This repo is mainly notes taken while studying 'A Handbook of Statistical Analyses Using R (second edition)'.
