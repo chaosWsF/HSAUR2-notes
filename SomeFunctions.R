@@ -1,5 +1,5 @@
 rmse <- function(estimated.values, accurate.value) {
-  error.rmse <- sqrt(mean((estimated.values - accurate.value) ** 2))
+  error.rmse <- sqrt(mean((estimated.values - accurate.value)**2))
   return(error.rmse)
 }
 
@@ -22,16 +22,19 @@ sR <- function(used.data) {
 
 # plot for womensrole in capter logistic regression
 myplot <- function(role.fitted) {
-  f <- womensrole$gender == 'Female'
-  plot(womensrole$education, role.fitted, type = 'n',
-       ylab = "Probability of agreeing",
-       xlab = "Education", ylim = c(0, 1))
+  f <- womensrole$gender == "Female"
+  plot(womensrole$education, role.fitted,
+    type = "n",
+    ylab = "Probability of agreeing",
+    xlab = "Education", ylim = c(0, 1)
+  )
   lines(womensrole$education[!f], role.fitted[!f], lty = 1)
   lines(womensrole$education[f], role.fitted[f], lty = 2)
   lgbtxt <- c("Fitted (Males)", "Fitted (Females)")
-  legend("topright", lgbtxt, lty = 1:2, bty = 'n')
-  y <- womensrole$agree / (womensrole$agree + 
-                           womensrole$disagree)
+  legend("topright", lgbtxt, lty = 1:2, bty = "n")
+  y <- womensrole$agree / (womensrole$agree +
+    womensrole$disagree)
   text(womensrole$education, y, ifelse(f, "\\VE", "\\MA"),
-       family = "HersheySerif", cex = 1.25)
+    family = "HersheySerif", cex = 1.25
+  )
 }
